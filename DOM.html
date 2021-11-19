@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- DOM,文档对象模型，是一个接口 -->
+    <!-- 获取元素 -->
+
+    <div id='time'>2019</div>
+    <ul id='hu'>
+        <li>hhh1</li>
+        <li>hhh2</li>
+        <li>hhh3</li>
+        <li>hhh4</li>
+        <li>hhh5</li>
+    </ul>
+
+    <div class="box">盒子</div>
+    <div class="box">盒子</div>
+
+    <script>
+        // 因为文档从上往下加载,第一种方法获取元素
+        // 获取元素，方法1：通过ID
+        var timer = document.getElementById('time');
+        console.log(timer);
+        // 返回的是一个元素对象
+        console.dir(timer);
+        // 这里是打印元素对象，更好的查看里面的属性和方法
+
+        // 方法2：通过标签名字
+        var lis = document.getElementsByTagName('li');
+        console.log(lis);
+        // 以伪数组的形式打印的，就算只有一个也是，就算没有也是
+        console.log(lis[0]);
+
+        // Element.getElementById();
+        // 这里可以选定父元素，父元素不一定是document，但是父元素一个是一个对象，而不能是一个伪数组
+        // 父元素必须是单个对象，如果是伪数组则必须指明是哪一个对象，获取的时候是不包括
+        var ul = document.getElementById('hu');
+        console.log(ul.getElementsByTagName('li'));
+
+        // H5新增的方法获取1.通过classname
+        var boxs = document.getElementsByClassName('box');
+        console.log(boxs);
+        // 依旧是伪数组的形式
+
+        // 2.通过query,返回的是第一个元素,也可以用all返回全部的
+        var firstbox = document.querySelector('.box')
+        console.log(firstbox);
+        var qsa = document.querySelectorAll('.box')
+        console.log(qsa);
+
+        // 获取body标签，获取html标签
+        var bodyEle = document.body;
+        console.log(bodyEle);
+        console.dir(bodyEle);
+        // 获取html标签
+        var htmlEle = document.documentElement;
+    </script>
+
+</body>
+
+</html>

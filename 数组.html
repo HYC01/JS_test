@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建数组
+        var arr = new Array();
+        var arr1 = [12, 23, 34, '345', 'hu'];
+        // 数组可以放任何内容
+        console.log(arr1);
+
+        for (var i = 0; i < arr1.length; i++) {
+            console.log(arr1[i]);
+        }
+        // lengh长度是可读写的
+        var arr1 = ['green', 'red', 'blue'];
+        console.log(arr1);
+        arr1.length = 5;
+        // 这里可以扩容，虽然后面的是undefined.
+        console.log(arr1);
+
+
+        // 还可以修改索引号
+        var arr2 = ['green', 'red', 'blue'];
+        arr2[3] = 'hotpink';
+        console.log(arr2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

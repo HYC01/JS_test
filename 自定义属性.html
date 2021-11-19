@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo" index="1">
+
+    </div>
+
+    <script>
+        var div=document.querySelector('div');
+        console.log(div.id);
+        // 这个获得的是内置属性值
+        console.log(div.getAttribute('id'));
+        // 这里可以获取自定义属性
+        // 这是两种方法来获得属性值
+        console.log(div.getAttribute('index'));
+
+        // 也可以更换属性值
+        div.id='test';
+        div.setAttribute('index',2);
+        div.className='hu';
+        div.setAttribute('class','foot')
+        // 依旧是针对自定义属性来说
+
+        // div.index='5';
+        div.removeAttribute('index');
+    </script>
+    
+</body>
+</html>

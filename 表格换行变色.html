@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: 1px solid rgb(2, 0, 0);
+        }
+        .bg{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr >
+                <th>代码</th>
+                <th>名称</th>
+                <th>实质</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class='bg'>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+            </tr>
+        </tbody>
+    </table>
+    
+    <script>
+        var trs=document.querySelector('tbody').querySelectorAll('tr');
+        for(var i=0;i<trs.length;i++){
+            // 鼠标经过事件
+            trs[i].onmouseover=function(){
+                // console.log('121');
+                this.className='bg';
+            }
+            // 鼠标离开事件
+            trs[i].onmouseout=function(){
+                // console.log('121');
+                this.className='';
+            }
+        }
+    </script>
+</body>
+</html>

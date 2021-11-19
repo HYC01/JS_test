@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(1 + 1);
+        // 算数运算是有优先级的
+        // 前置递增，后置递增
+        var num = 10;
+        console.log(num++ + 10);
+        console.log(++num + 10);
+
+        console.log(18 == '18');
+        // 双等只要求内容一致。
+        var age = 1;
+        var AGE = '1';
+        console.log(age == AGE);
+        console.log(age);
+        console.log(AGE);
+        console.log(age === AGE);
+        // 全等要求数据类型都要一致。
+
+
+        // 逻辑运算符
+        // &&，||，！，
+        // 短路运算，只要左边能确定，就不再继续运算
+        // 左边为真，返回右边，左边为假，则直接返回左边，返回‘真’之后后面就不执行了
+        console.log(123 && 456 && 23);
+        console.log(0 && 234);
+
+        // 逻辑中断
+        //逻辑或，左边真，返回左，左边为假，返回右边
+        console.log(0 || 234);
+
+        // 赋值运算符，=，+=，—=，*=，/=.
+
+        // 一员运算符，二元运算符，
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

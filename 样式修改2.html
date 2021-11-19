@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .change {
+            background-color: purple;
+            color: #fff;
+            font-size: 40px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first">文本</div>
+    <script>
+        var div = document.querySelector('div');
+        div.onclick = function() {
+            // 还有一种修改样式的方法就是修改classname，这是一种类名样式操作
+            // 这里就是让我们当前元素的类名改为了change类
+            this.className = 'change';
+            //当样式少的时候是可以用style来修改，但是当样式比较多的时候，可以把他写到一个css样式里面，然后再用classname来修改
+            // 会直接覆盖原有的类名，但是如果想要保留原先的
+            this.className = 'first change';
+        }
+    </script>
+
+</body>
+
+</html>

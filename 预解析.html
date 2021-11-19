@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 
+        // console.log(num);
+        // var num = 10;
+
+        // fn();
+
+        // function fn() {
+        //     console.log(11);
+        // }
+
+
+        // var fun = function() {
+        //     console.log(22);
+        // }
+        // fun();
+
+        // js引擎会分为两步，第一步预解析，然后代码执行
+        // 第一步，js会把var和function都提升到作用域的 最前面。
+        // 第二步，按照代码书写的顺序从上往下执行。
+        // 预解析分为变量预解析，和函数预解析。
+        // 变量预解析是先把申明先提升上去，但不会提升赋值。
+        // 函数预解析，把所有的函数声明提升上去，但不会调用。
+
+        var num1 = 10;
+        fun();
+
+        function fun() {
+            console.log(num1);
+            var num1 = 20;
+        }
+
+        // 相当于执行
+        // var num;
+
+        // function fun() {
+        //     var num;
+        //     console.log(num);
+        //     num = 20;
+        // }
+        // num = 10;
+        // fun();
+
+
+        function f1() {
+            var a = b = c = 9;
+            // 这里要注意，他和var a=9，b=9，c=9不一样，
+            // 这里相当于只有a有声明，bc直接赋值，所以他是全局变量。
+            // 但这里a是局部变量。
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        f1();
+        console.log(c);
+        console.log(b);
+        console.log(a);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

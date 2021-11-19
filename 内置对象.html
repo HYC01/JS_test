@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 自定义对象，内置对象，浏览器对象 -->
+    <script>
+        // 内置对象，和自定义对象是ECMA语法的，浏览器属于BOM
+        console.log(Math.PI);
+        console.log(Math.abs(1));
+        console.log(Math.floor(-1.2));
+        // 向小了取
+        console.log(Math.ceil(-1.2));
+        // 向大了取
+        console.log(Math.round(1.2));
+        // 四舍五入，他是先加0.5再向下取整
+
+        // 随机数,[0,1)
+        console.log(Math.random());
+
+        // Math.floor(Math.random() * (max - min + 1)) + min;
+
+        // 日期对象，是一个构造函数，所以是需要new来构造
+        var date = new Date();
+        console.log(date);
+        // 参数，20019-5-1
+        console.log(date.getMonth() + 1);
+        // 月份从0-11，星期从0-6
+        console.log(date.getMinutes());
+
+        var h = date.getSeconds();
+        h = h < 10 ? '0' + h : h;
+        console.log(h);
+
+        // 距离1970年，1月1号过了多久
+        var t = date.getTime();
+        console.log(date.valueOf());
+        console.log(t);
+
+        var date1 = +new Date();
+        console.log(date1);
+
+        console.log(Date.now());
+        // 时间戳，
+
+        function countDown(time) {
+            var nowTime = +new Date();
+            var inputTime = +new Date(time);
+            var times = (inputTime - nowTime) / 1000;
+            // 秒
+            var d = parseInt(times / 60 / 60 / 24);
+            d = d < 10 ? '0' + d : d;
+            var h = parseInt(times / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            var m = parseInt(times / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            var s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s;
+            return d + '天' + h + '时' + m + '分' + s + '秒';
+        }
+
+        console.log(countDown('2021-10-21 18:00:00'))
+
+
+        // 数组,是一个构造函数
+        var arr = [1, 2, 3];
+        var arr1 = new Array(2);
+        // 一个参数代表数组的长度，多个参数，就是直接赋值
+
+        // instanceof Array，运算符，可以用来检测是否某个类型
+        // Array.isArray(),也可以用来判断是否一个数组，需要加参数
+        console.log(arr1 instanceof Array);
+        console.log(Array.isArray(arr1));
+
+
+        // 数组的增加和删除
+        // 返回值是数组的长度,在末尾添加
+        console.log(arr.push('7'));
+        console.log(arr);
+
+        // 这是在前面的添加
+        console.log(arr.unshift('red'));
+        console.log(arr);
+
+        // pop用来删除,返回值是删除的元素，每次只能删除一个元素,末尾的元素
+        console.log(arr.pop());
+        console.log(arr);
+
+        // 这是删除最前面的元素
+        console.log(arr.shift());
+        console.log(arr);
+
+        // 数组翻转
+        arr.reverse();
+        console.log(arr);
+        // 进行排序
+
+        arr.sort();
+        // 不带方法的sort不能完全排序，只能按照首位来排
+
+        arr.sort(function(a, b) {
+            return a - b;
+        });
+        console.log(arr);
+        arr.sort(function(a, b) {
+            return b - a;
+        });
+        console.log(arr);
+
+        var B = ['red', 'blue', 'green', 'blue'];
+        console.log(B);
+        console.log(B.indexOf('blue'));
+        console.log(B.lastIndexOf('blue'));
+        // 找不到就是-1
+
+        // 数组去重就是可以用indexof来判断是否存在，如果不存在再push进入
+        // 数组转换为字符串
+        console.log(B.toString());
+        // join更强大，可以定义分隔符
+        console.log(B.join('|'));
+
+        var str = 'andy';
+        console.log(str.length);
+        // 简单数据类型包装为复杂数据类型，这样这个基本包装类型就有了属性和方法
+
+        // 字符串其实不可变，虽然内容变了，只是内存地址变了，
+        // 因为字符串不可变，所以操作方法都是生成新的字符串
+        var st = '改革春风吹满地春天';
+        console.log(st.indexOf('春'));
+        console.log(st.lastIndexOf('春'));
+
+
+        var A = 'dagsudfgdvoruyghgfh';
+        var index = A.indexOf('g');
+        while (index !== -1) {
+            console.log(index);
+            index = A.indexOf('g', index + 1);
+            // 第二个参数代表从index+1的位置开始查找，这个方法用于解决g出现的位置，也可以打印他出现的次数。
+        }
+
+        // 1.charAt()
+        var s = 'andy';
+        console.log(s.charAt(0));
+
+        // 2.charCodeAt(),返回ascII
+        console.log(s.charCodeAt(2));
+
+        // 3.str[2],这个更简单
+        console.log(s[0]);
+
+        var H = 'aiufyasfhkasdgasd';
+        var o = {};
+        for (var i = 0; i < H.length; i++) {
+            var chars = H.charAt(i);
+            if (o[chars]) {
+                o[chars]++;
+            } else {
+                o[chars] = 1;
+            }
+        }
+        console.log(o);
+        var max = 0;
+        var ch = '';
+        for (k in o) {
+            if (o[k] > max) {
+                max = o[k];
+                ch = k;
+            }
+        }
+        console.log(max);
+        console.log(ch);
+
+
+        var N = 'andy';
+        var M = 'hu';
+        console.log(N.concat(M));
+
+        var J = "gaigecahunfageng";
+        console.log(J.substr(2, 2));
+        // 第一个2是开头，第二个2是取几个
+
+        console.log(J.replace('a', 'b'));
+        console.log(J.replaceAll('a', 'b'));
+
+        // 把字符串转换为数组，
+        console.log(J.split(''));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

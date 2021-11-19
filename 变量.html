@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 声明变量
+        var age;
+        // 赋值
+        age=18;
+        console.log(age);
+
+        // 初始化，就是又声明又赋值
+        var myname='pink老师';
+        console.log(myname);
+
+        // 先输入
+        // var name=prompt('请输入你的名字');
+        
+        // alert(name+'牛大了');
+
+        var age = 18,
+        gz = 2000,
+        hu = 'huyichen';
+
+        // 特殊情况
+        var sex;
+        console.log(sex);
+        // undefined
+
+        // 这也可以
+        pp=10;
+        console.log(pp);
+
+        // 最好不要用name作为变量名
+
+        // 在js中是不需要定义类型的，在程序运行过程中过根据等号右边的值来确定
+        // 而且js中变量的类型可以变化
+        var x=10;
+        x='pink';
+
+
+        // 简单数据类，1.number(整数或者小数)，2.boolean（），3.string，4.undefined，5.null
+
+        // 1.以0开头就是八进制
+        var num1=010;
+        console.log(num1);
+
+        // 以0x开头的是16进制
+        var num2=0xa;
+        console.log(num2)
+
+        // console.log(Number.MAX_VALUE);
+        // console.log(Number.MIN_VALUE);
+
+        // alert(Infinity);
+        // alert(-Infinity);
+        // alert('hu'-10);
+        // not a number就是他不是一个数字
+
+        // isNaN(),来判断是不是数字
+        console.log(isNaN(12));
+
+        // 2.字符串型，只要加了引号都算是字符串，推荐使用单引号
+        var str='我是一个"高富帅"';
+        console.log(str);
+
+        // 转义符,\n就是换行
+        var str1='我是一个"高富帅"';
+        console.log(str1);
+
+        // 检测长度
+        console.log(str1.length);
+
+        // 字符串的拼接，用加号，加起来都是字符串类型，可以变量和字符串相加
+
+        // 3.boolean,true,false.
+        var flag=true;
+        var flag1=false;
+        // ture=1,false=0;
+
+        // undefined 未定值数据类型
+        var str2;
+        console.log(str2);
+        console.log(str2+1);//Nan
+
+        // null空值
+        var space=null;
+        console.log(space+1);//1
+        // 在加法的时候，null=0
+
+        // 检测数据类型，typeof
+        var num=10;
+        console.log(typeof(num));
+        var s='pink';
+        console.log(typeof(s));
+
+        var s=null;
+        console.log(typeof(s));
+
+        // prompt取过来的值都是string类型的
+        
+        // 数据类型转换，因为prompt取过来的都是string，所以肯定要转换
+        // String，number，boolean
+
+        // 1.转换为字符串
+        var number=1;
+        console.log(number.toString());
+        // 转换tostring
+        console.log(String(number));
+        // 强制转换
+        console.log(number+'');
+        // 拼接字符串，加号拼接用的最多，这是一种隐式转换
+
+        // 2.转换为数字型
+        var age='12.66';
+        console.log(parseInt(age));
+        // 取整，要是小数，只取整数,或者开头的数字
+        console.log(parseFloat(age));
+        // 可以取到小数
+        console.log(Number(age));
+        // 强制转换
+        console.log('12'-0);
+        // 隐式转换，+是转为Str，而-，*，/，都会转换为数字
+
+        // 转换为boolean型，0，null，Nan，'',undefined，会被转为false
+        console.log(Boolean(0));
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>

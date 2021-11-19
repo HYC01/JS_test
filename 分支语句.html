@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 顺序结构，分支结构，循环结构
+        // 1.顺序结构，就是按照先后顺序执行
+        // 2.分支流程控制，可以根据不同的条件，有不同的结果
+
+        var a = 10;
+        var b = 9;
+        if (a < b) {
+            console.log('woaini');
+        } else if (1 < 9) {
+            console.log('woaini');
+        } else {
+            console.log('wobuaini');
+        }
+
+        // 三元运算符
+        // 条件表达式？表达式1:表达式2
+        // 三元表达式等价于一个if，else语句
+        var x = 3 > 5 ? ture : false;
+        console.log(x);
+
+        // switch语句
+
+        // switch,思路就是匹配,执行效率会更高的，带有范围的不行
+        var x = true;
+        switch (x) {
+            case false:
+                console.log('hi');
+                break;
+            case true:
+                console.log('hello');
+                break;
+            default:
+                console.log('default');
+        }
+        // 匹配的是全等，类型也要相同
+        // break是需要的
+
+        // switch和if语句的区别，一般情况下可以相互替换，
+        // if更灵活，switch更固定
+        // switch效率更高
+        // 分支少，if好，分支多，用switch
+
+        // 循环案例
+        // for，while，do while
+        for (var i = 1; i <= 100; i++) {
+            console.log('牛');
+        }
+        // 断点调试
+
+        // while循环
+        var q = 0;
+
+        while (q < 10) {
+            console.log(q);
+            q++;
+        }
+
+        // do while语句,无非就是先执行一次
+        do {
+            console.log('hi');
+            q++;
+        } while (q < 20)
+
+        // while更复杂，for循环更常用
+
+
+        // continue和break
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr >
+                <td>
+                    <input type="checkbox" id="j_cbAll">
+                </td>
+                <th>名称</th>
+                <th>实质</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class='bg'>
+                <td>
+                    <input type="checkbox" >
+                </td>
+                <th>2</th>
+                <th>3</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" >
+                </td>
+                <th>2</th>
+                <th>3</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" >
+                </td>
+                <th>2</th>
+                <th>3</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // 全选和取消错全做法。
+        // 获取元素
+        var j_cbAll =document.querySelector('#j_cbAll');
+        var j_tbs=document.querySelector('tbody').querySelectorAll('input');
+        // 其实就是两种function，一种被添加在了总的全选框上
+        j_cbAll.onclick=function(){
+            for(var i=0;i<j_tbs.length;i++){
+                j_tbs[i].checked=this.checked;
+            }
+        }
+
+        // 还有一些被添加在单个复选框上面，但是由于复选框太多，所以用for循环来添加function
+        for(var i=0;i<j_tbs.length;i++){
+            j_tbs[i].onclick=function(){
+                var flag=true;
+                // 每次点击都要检查所有的复选框
+                for(var i=0;i<j_tbs.length;i++){
+                    if(!j_tbs[i].checked){
+                        flag=false;
+                        break;
+                        // 这样可以提高效率
+                    }
+                }
+                j_cbAll.checked=flag;
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
